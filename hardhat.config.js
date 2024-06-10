@@ -5,9 +5,16 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.24",
   networks: {
-    bscTest: {
-      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
-      accounts: [`0x${process.env.PRIVATE_KEY}`],
+    bsctestnet: {
+      url: "https://data-seed-prebsc-2-s3.binance.org:8545/",
+      chainId: 97,
+      gasPrice: "auto",
+      accounts: [process.env.privateKey],
     },
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://bscscan.com/
+    apiKey: `${process.env.bscscanApiKey}`,
   },
 };
